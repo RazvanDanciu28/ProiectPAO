@@ -57,5 +57,5 @@ public class Teacher extends  Person{
                  "materie= " + materie;
     }
 
-    //ok
+
 }
