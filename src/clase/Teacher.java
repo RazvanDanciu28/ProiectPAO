@@ -18,6 +18,7 @@ public class Teacher extends  Person{
 
     public Teacher(){}
 
+    //getters
     public Materii getMaterie(){
         return materie;
     }
@@ -36,6 +37,7 @@ public class Teacher extends  Person{
 
     //nu am setter la materie pentru ca nu are sens ca un profesor sa isi schimbe materia
 
+    //setters
     public void changeDisp(String zi, int ora){
         orar.changeStatusOra(zi, ora);
     }
