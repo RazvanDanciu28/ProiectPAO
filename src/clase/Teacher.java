@@ -56,4 +56,6 @@ public class Teacher extends  Person{
          return super.toString() +
                  "materie= " + materie;
     }
+
+    //ok
 }
