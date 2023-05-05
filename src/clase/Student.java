@@ -29,9 +29,26 @@ public class Student extends Person{
     }
 
 
+
+    //setters
     public void changeDisp(String zi, int ora){
         orar.changeStatusOra(zi, ora);
     }
-    
+    public void setBuget(int buget){
+        this.buget = buget;
+    }
+    public void addMaterie(Materii materie){
+        if (!materiiList.contains(materie)) {
+            materiiList.add(materie);
+        }
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() +
+                "buget= " + buget +
+                "Materii= " + materiiList.toString();
+    }
+
 
 }

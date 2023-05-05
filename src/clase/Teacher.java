@@ -19,8 +19,8 @@ public class Teacher extends  Person{
     public Teacher(){}
 
     //getters
-    public Materii getMaterie(){
-        return materie;
+    public String getMaterie(){
+        return materie.toString();
     }
     public Orar getOrar(){
         return orar;

@@ -3,7 +3,7 @@ package clase;
 import java.util.Arrays;
 
 public class Orar {
-    private class Day{
+    public class Day{
         boolean optZece = false;
         boolean zeceDoispe = false;
         boolean doispePaispe = false;
