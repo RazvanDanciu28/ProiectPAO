@@ -67,13 +67,12 @@ public class Person {
 
     @Override
     public String toString() {
-        return "{" +
-                "First Name= " + firstName +
-                ", Last Name= " + lastName +
-                ", Phone Number= " + phoneNumber +
-                ", email= " + email +
-                ", age= " + Integer.toString(age) +
-                "}";
-
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

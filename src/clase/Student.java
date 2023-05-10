@@ -1,6 +1,7 @@
 package clase;
 import enums.Materii;
 import java.util.ArrayList;
+import enums.Zile;
 
 public class Student extends Person{
     private Orar orar;
@@ -20,7 +21,7 @@ public class Student extends Person{
     public Orar getOrar(){
         return orar;
     }
-    public String getDisp(String zi, int ora){
+    public String getDisp(Zile zi, int ora){
         return orar.getStatusOra(zi, ora);
     }
 
@@ -31,7 +32,7 @@ public class Student extends Person{
 
 
     //setters
-    public void changeDisp(String zi, int ora){
+    public void changeDisp(Zile zi, int ora){
         orar.changeStatusOra(zi, ora);
     }
     public void setBuget(int buget){
@@ -44,10 +45,17 @@ public class Student extends Person{
     }
 
     @Override
-    public String toString(){
-        return super.toString() +
-                "buget= " + buget +
-                "Materii= " + materiiList.toString();
+    public String toString() {
+        return "Student{" +
+                "orar=" + orar +
+                ", buget=" + buget +
+                ", materiiList=" + materiiList +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                '}';
     }
 
 

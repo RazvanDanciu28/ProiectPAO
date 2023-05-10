@@ -1,6 +1,7 @@
 package clase;
 
 import java.util.Arrays;
+import enums.Zile;
 
 public class Orar {
     public class Day{
@@ -36,14 +37,14 @@ public class Orar {
         else return "Liber";
     }
 
-    public String getStatusOra(String zi, int ora){
-        Day day_curent = switch (zi.toLowerCase()) {
-            case "luni" -> this.luni;
-            case "marti" -> this.marti;
-            case "miercuri" -> this.miercuri;
-            case "joi" -> this.joi;
-            case "vineri" -> this.vineri;
-            case "sambata" -> this.sambata;
+    public String getStatusOra(Zile zi, int ora){
+        Day day_curent = switch (zi) {
+            case Luni -> this.luni;
+            case Marti -> this.marti;
+            case Miercuri -> this.miercuri;
+            case Joi -> this.joi;
+            case Vineri -> this.vineri;
+            case Sambata -> this.sambata;
             default -> this.duminica;
         };
 
@@ -76,14 +77,14 @@ public class Orar {
 //        }
     }
 
-    public void changeStatusOra(String zi, int ora){
-        Day day_curent = switch (zi.toLowerCase()) {
-            case "luni" -> this.luni;
-            case "marti" -> this.marti;
-            case "miercuri" -> this.miercuri;
-            case "joi" -> this.joi;
-            case "vineri" -> this.vineri;
-            case "sambata" -> this.sambata;
+    public void changeStatusOra(Zile zi, int ora){
+        Day day_curent = switch (zi) {
+            case Luni -> this.luni;
+            case Marti -> this.marti;
+            case Miercuri -> this.miercuri;
+            case Joi -> this.joi;
+            case Vineri -> this.vineri;
+            case Sambata -> this.sambata;
             default -> this.duminica;
         };
 

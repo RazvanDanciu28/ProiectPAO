@@ -1,5 +1,6 @@
 package clase;
 import enums.Materii;
+import enums.Zile;
 
 
 public class Teacher extends  Person{
@@ -8,10 +9,10 @@ public class Teacher extends  Person{
     private double rating;
     private int notePrimite;
 
-    public Teacher(String firstName, String lastName, String phoneNumber, String email, int age, Materii materie, Orar orar, double rating, int notePrimite){
+    public Teacher(String firstName, String lastName, String phoneNumber, String email, int age, Materii materie, double rating, int notePrimite){
         super(firstName, lastName, phoneNumber, email, age);
         this.materie = materie;
-        this.orar = orar;
+        this.orar = new Orar();
         this.rating = rating;
         this.notePrimite = notePrimite;
     }
@@ -25,7 +26,7 @@ public class Teacher extends  Person{
     public Orar getOrar(){
         return orar;
     }
-    public String getDisp(String zi, int ora){
+    public String getDisp(Zile zi, int ora){
         return orar.getStatusOra(zi, ora);
     }
     public double getRating(){
@@ -38,7 +39,7 @@ public class Teacher extends  Person{
     //nu am setter la materie pentru ca nu are sens ca un profesor sa isi schimbe materia
 
     //setters
-    public void changeDisp(String zi, int ora){
+    public void changeDisp(Zile zi, int ora){
         orar.changeStatusOra(zi, ora);
     }
     public void setNotePrimite(int nrNote){
@@ -54,9 +55,18 @@ public class Teacher extends  Person{
     }
 
     @Override
-    public String toString(){
-         return super.toString() +
-                 "materie= " + materie;
+    public String toString() {
+        return "Teacher{" +
+                "materie=" + materie +
+                ", orar=" + orar +
+                ", rating=" + rating +
+                ", notePrimite=" + notePrimite +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                '}';
     }
 
 
