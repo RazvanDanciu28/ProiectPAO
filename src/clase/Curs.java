@@ -4,18 +4,20 @@ import enums.Materii;
 import enums.Zile;
 
 public class Curs {
-    private Materii numeMaterie;
-    private int length;
-    private Teacher prof;
-    private Orar.Day intervalOrar;
-    private Zile zi;
+    protected Materii numeMaterie;
+    protected int length;
+    protected Teacher prof;
+    protected Orar.Day intervalOrar;
+    protected Zile zi;
+    protected int price;
 
-    public Curs(Materii numeMaterie, int length, Teacher prof, Zile zi, Orar.Day intervalOrar){
+    public Curs(Materii numeMaterie, int length, Teacher prof, Zile zi, Orar.Day intervalOrarint, int price){
         this.numeMaterie = numeMaterie;
         this.length = length;
         this.prof = prof;
         this.zi = zi;
         this.intervalOrar = intervalOrar;
+        this.price = price;
     }
     public Curs(){}
 
@@ -39,6 +41,10 @@ public class Curs {
     }
     public Zile getZi(){
         return zi;
+    }
+
+    public int getPrice(){
+        return price;
     }
 
 
@@ -78,11 +84,15 @@ public class Curs {
         this.zi = zi;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     @Override
     public String toString(){
         return "{" + "Materie: " + numeMaterie +
                 " Durata: " + length +
+                " Pret: " + price +
                 " Profesor: " + prof.getLastName() + " " + prof.getFirstName() +
                 " Zi: " + zi +
                 " Ora: " + this.getIntervalOrar() + "}";

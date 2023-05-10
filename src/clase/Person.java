@@ -1,11 +1,11 @@
 package clase;
 
 public class Person {
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
-    private String email;
-    private int age;
+    protected String firstName;
+    protected String lastName;
+    protected String phoneNumber;
+    protected String email;
+    protected int age;
 
     //constructor
     public Person(String firstName, String lastName, String phoneNumber, String email, int age){
@@ -74,5 +74,6 @@ public class Person {
                 ", email= " + email +
                 ", age= " + Integer.toString(age) +
                 "}";
+
     }
 }
