@@ -11,7 +11,7 @@ public class loadCursuri {
     public static ArrayList<Curs> cursuri = new ArrayList<>();
     public static ArrayList<CursSpecial> cursuriSpeciale = new ArrayList<>();
 
-    public loadCursuri(){
+    public static void load(){
         cursuri.add(new Curs(Materii.Informatica, 120));
         cursuri.add(new Curs(Materii.Geografie, 80));
         cursuri.add(new Curs(Materii.Biologie, 100));

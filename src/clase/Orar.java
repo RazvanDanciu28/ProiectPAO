@@ -5,7 +5,7 @@ import enums.Zile;
 
 public class Orar {
     public class Day{
-        boolean optZece = false;
+        boolean optZece;
         boolean zeceDoispe = false;
         boolean doispePaispe = false;
         boolean paispeSaispe = false;
@@ -13,15 +13,16 @@ public class Orar {
         boolean optispeDouazeci = false;
     }
 
-    private Day luni;
-    private Day marti;
-    private Day miercuri;
-    private Day joi;
-    private Day vineri;
-    private Day sambata;
-    private Day duminica;
+    private Day luni = new Day();
+    private Day marti = new Day();
+    private Day miercuri = new Day();
+    private Day joi = new Day();
+    private Day vineri = new Day();
+    private Day sambata = new Day();
+    private Day duminica = new Day();
 
     public Orar(){
+       // luni.optZece = false;
         for (Day day : Arrays.asList(luni, duminica)) {
             day.optZece = false;
             day.zeceDoispe = false;

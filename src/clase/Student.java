@@ -6,11 +6,13 @@ import enums.Zile;
 public class Student extends Person{
     private Orar orar;
     private int buget;
+    private String parola;
     private ArrayList<Materii> materiiList;
 
-    public Student(String firstName, String lastName, String phoneNumber, String email, int age, Materii materie, Orar orar, int buget){
+    public Student(String firstName, String lastName, String phoneNumber, String email, String parola, int age, int buget){
         super(firstName, lastName, phoneNumber, email, age);
-        this.orar = orar;
+        this.parola = parola;
+        this.orar = new Orar();
         this.buget = buget;
         this.materiiList = new ArrayList<>();
     }
@@ -29,7 +31,9 @@ public class Student extends Person{
         return materiiList;
     }
 
-
+    public String getParola() {
+        return parola;
+    }
 
     //setters
     public void changeDisp(Zile zi, int ora){
@@ -42,6 +46,10 @@ public class Student extends Person{
         if (!materiiList.contains(materie)) {
             materiiList.add(materie);
         }
+    }
+
+    public void setParola(String parola) {
+        this.parola = parola;
     }
 
     @Override

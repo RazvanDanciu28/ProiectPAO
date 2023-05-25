@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class loadTeachers {
 
     public static ArrayList<Teacher> teachers = new ArrayList<>();
-    public loadTeachers(){
+    public static void load(){
         teachers.add(new Teacher("Ozana",
                 "Atanasie",
                 "0762182783",
