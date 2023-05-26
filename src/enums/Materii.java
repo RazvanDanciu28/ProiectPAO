@@ -7,5 +7,6 @@ public enum Materii {
     LimbaRomana,
     Chimie,
     Istorie,
-    Geografie
+    Geografie;
+
 }

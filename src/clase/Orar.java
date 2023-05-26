@@ -4,13 +4,13 @@ import java.util.Arrays;
 import enums.Zile;
 
 public class Orar {
-    public class Day{
+    public static class Day{
         boolean optZece;
-        boolean zeceDoispe = false;
-        boolean doispePaispe = false;
-        boolean paispeSaispe = false;
-        boolean saispeOptispe = false;
-        boolean optispeDouazeci = false;
+        boolean zeceDoispe;
+        boolean doispePaispe;
+        boolean paispeSaispe;
+        boolean saispeOptispe;
+        boolean optispeDouazeci;
     }
 
     private Day luni = new Day();
@@ -24,12 +24,12 @@ public class Orar {
     public Orar(){
        // luni.optZece = false;
         for (Day day : Arrays.asList(luni, duminica)) {
-            day.optZece = false;
-            day.zeceDoispe = false;
-            day.doispePaispe = false;
-            day.paispeSaispe = false;
-            day.saispeOptispe = false;
-            day.optispeDouazeci = false;
+            day.optZece = true;
+            day.zeceDoispe = true;
+            day.doispePaispe = true;
+            day.paispeSaispe = true;
+            day.saispeOptispe = true;
+            day.optispeDouazeci = true;
         }
     }
 

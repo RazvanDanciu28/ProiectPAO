@@ -30,7 +30,6 @@ public class loadCursuri {
                 15,
                 60
         ));
-
         loadTeachers.teachers.get(3).changeDisp(Zile.Luni, 10);
 
 
@@ -43,7 +42,6 @@ public class loadCursuri {
                 40,
                 100
         ));
-
         loadTeachers.teachers.get(10).changeDisp(Zile.Marti, 10);
 
         cursuriSpeciale.add(new CursSpecial(Materii.Informatica,
@@ -55,7 +53,6 @@ public class loadCursuri {
                 6,
                 30
         ));
-
         loadTeachers.teachers.get(10).changeDisp(Zile.Miercuri, 10);
 
         //Matematica
@@ -68,7 +65,6 @@ public class loadCursuri {
                 10,
                 40
         ));
-
         loadTeachers.teachers.get(2).changeDisp(Zile.Luni, 8);
 
 
@@ -81,7 +77,6 @@ public class loadCursuri {
                 40,
                 100
         ));
-
         loadTeachers.teachers.get(4).changeDisp(Zile.Marti, 12);
 
         cursuriSpeciale.add(new CursSpecial(Materii.Informatica,
@@ -93,7 +88,6 @@ public class loadCursuri {
                 6,
                 30
         ));
-
         loadTeachers.teachers.get(4).changeDisp(Zile.Miercuri, 8);
 
 

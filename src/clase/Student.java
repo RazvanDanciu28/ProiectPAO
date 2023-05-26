@@ -35,6 +35,10 @@ public class Student extends Person{
         return parola;
     }
 
+    public int getBuget() {
+        return buget;
+    }
+
     //setters
     public void changeDisp(Zile zi, int ora){
         orar.changeStatusOra(zi, ora);
