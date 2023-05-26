@@ -73,6 +73,7 @@ public class StudentService {
             System.out.println("5. Chimie");
             System.out.println("6. Istorie");
             System.out.println("7. Geografie");
+            System.out.println("8. Iesire");
 
             System.out.println("Introdu comanda: ");
             Scanner in = new Scanner(System.in);

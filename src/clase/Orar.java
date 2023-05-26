@@ -5,12 +5,20 @@ import enums.Zile;
 
 public class Orar {
     public static class Day{
-        boolean optZece;
-        boolean zeceDoispe;
-        boolean doispePaispe;
-        boolean paispeSaispe;
-        boolean saispeOptispe;
-        boolean optispeDouazeci;
+        boolean optZece = true;
+        boolean zeceDoispe = true;
+        boolean doispePaispe = true;
+        boolean paispeSaispe = true;
+        boolean saispeOptispe = true;
+        boolean optispeDouazeci = true;
+        public Day(){
+            optZece = true;
+            zeceDoispe = true;
+            doispePaispe = true;
+            paispeSaispe = true;
+            saispeOptispe = true;
+            optispeDouazeci = true;
+        }
     }
 
     private Day luni = new Day();
