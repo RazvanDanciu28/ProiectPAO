@@ -1,20 +1,20 @@
 import loader.*;
-import enums.*;
-import clase.*;
-import services.StudentService;
-
-import java.lang.ref.Reference;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
-
 import services.MeniuService;
+
+import java.sql.SQLException;
 
 
 public class Main {
     public static void main(String[] args) {
         loadTeachers.load();
         loadCursuri.load();
+        try{
+            loadElevi.load();
+        }
+        catch (SQLException e){
+            System.out.println("problema la conectare");
+            throw new RuntimeException(e);
+        }
 
         MeniuService.Ecran1();
         MeniuService.Meniu();

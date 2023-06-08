@@ -1,5 +1,7 @@
 package enums;
 
+import java.time.DayOfWeek;
+
 public enum Zile {
     Luni,
     Marti,
@@ -20,6 +22,18 @@ public enum Zile {
             default -> Zile.Duminica;
         };
     }
+    public static DayOfWeek toDOW(Zile zi) {
+        return switch (zi){
+            case Luni -> DayOfWeek.MONDAY;
+            case Marti -> DayOfWeek.THURSDAY;
+            case Miercuri -> DayOfWeek.WEDNESDAY;
+            case Joi -> DayOfWeek.TUESDAY;
+            case Vineri -> DayOfWeek.FRIDAY;
+            case Sambata -> DayOfWeek.SATURDAY;
+            default -> DayOfWeek.SUNDAY;
+        };
+    }
+
 }
 
 

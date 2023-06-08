@@ -2,9 +2,9 @@ package clase;
 import enums.Materii;
 import java.util.ArrayList;
 import enums.Zile;
+import services.StudentService;
 
-public class Student extends Person{
-    private Orar orar;
+public class Student extends Person implements StudentService {
     private int buget;
     private String parola;
     private ArrayList<Materii> materiiList;
@@ -12,7 +12,6 @@ public class Student extends Person{
     public Student(String firstName, String lastName, String phoneNumber, String email, String parola, int age, int buget){
         super(firstName, lastName, phoneNumber, email, age);
         this.parola = parola;
-        this.orar = new Orar();
         this.buget = buget;
         this.materiiList = new ArrayList<>();
     }
@@ -22,9 +21,6 @@ public class Student extends Person{
     //getters
     public Orar getOrar(){
         return orar;
-    }
-    public String getDisp(Zile zi, int ora){
-        return orar.getStatusOra(zi, ora);
     }
 
     public ArrayList<Materii> getMaterii(){
@@ -40,9 +36,7 @@ public class Student extends Person{
     }
 
     //setters
-    public void changeDisp(Zile zi, int ora){
-        orar.changeStatusOra(zi, ora);
-    }
+
     public void setBuget(int buget){
         this.buget = buget;
     }

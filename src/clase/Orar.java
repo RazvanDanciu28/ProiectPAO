@@ -1,112 +1,63 @@
 package clase;
 
-import java.util.Arrays;
+import java.util.*;
+import java.time.*;
 import enums.Zile;
 
-public class Orar {
-    public static class Day{
-        boolean optZece = true;
-        boolean zeceDoispe = true;
-        boolean doispePaispe = true;
-        boolean paispeSaispe = true;
-        boolean saispeOptispe = true;
-        boolean optispeDouazeci = true;
-        public Day(){
-            optZece = true;
-            zeceDoispe = true;
-            doispePaispe = true;
-            paispeSaispe = true;
-            saispeOptispe = true;
-            optispeDouazeci = true;
-        }
-    }
 
-    private Day luni = new Day();
-    private Day marti = new Day();
-    private Day miercuri = new Day();
-    private Day joi = new Day();
-    private Day vineri = new Day();
-    private Day sambata = new Day();
-    private Day duminica = new Day();
+public class Orar {
+    private Map<LocalDate, Map<Integer, Boolean>> orar;
 
     public Orar(){
-       // luni.optZece = false;
-        for (Day day : Arrays.asList(luni, duminica)) {
-            day.optZece = true;
-            day.zeceDoispe = true;
-            day.doispePaispe = true;
-            day.paispeSaispe = true;
-            day.saispeOptispe = true;
-            day.optispeDouazeci = true;
+        orar = new HashMap<>();
+        LocalDate data = LocalDate.now();
+        for (int i = data.getDayOfYear(); i < 365; i++){
+            Map<Integer, Boolean> zi = new HashMap<>();
+            for (int ora = 8; ora <= 20; ora++)
+                zi.put(ora, false); //initializam cu false, adica neocupat
+            orar.put(data,zi);
+            data = data.plusDays(1);
         }
     }
 
-    public String getStatus(boolean x){
-        if (!x) return "Ocupat";
-        else return "Liber";
+    ///getters
+    public boolean getStatusOra(LocalDate data, int ora){
+        return orar.get(data).get(ora);
+    }
+    public boolean getStatusOraRecurent(int ora, Zile zi){
+        DayOfWeek zi_dow = Zile.toDOW(zi);
+        LocalDate data = LocalDate.now();
+        data = data.with(zi_dow);
+        if (data.isBefore(LocalDate.now()))
+            data = data.plusWeeks(1);
+        for (int i = data.getDayOfYear(); i < 365; i++){
+            if (getStatusOra(data, ora))
+                return getStatusOra(data, ora);
+            data = data.plusDays(1);
+        }
+        return false;
     }
 
-    public String getStatusOra(Zile zi, int ora){
-        Day day_curent = switch (zi) {
-            case Luni -> this.luni;
-            case Marti -> this.marti;
-            case Miercuri -> this.miercuri;
-            case Joi -> this.joi;
-            case Vineri -> this.vineri;
-            case Sambata -> this.sambata;
-            default -> this.duminica;
-        };
-
-        return switch (ora) {
-            case 8 -> getStatus(day_curent.optZece);
-            case 10 -> getStatus(day_curent.zeceDoispe);
-            case 12 -> getStatus(day_curent.doispePaispe);
-            case 14 -> getStatus(day_curent.paispeSaispe);
-            case 16 -> getStatus(day_curent.saispeOptispe);
-            default -> getStatus(day_curent.optispeDouazeci);
-        };
-
-
-        //mettoda 2 daca nu merge prima
-//        if (zi.toLowerCase().equals("luni")){
-//            if (ora == 8) return luni.optZece;
-//            else if (ora == 10) return luni.zeceDoispe;
-//            else if (ora == 12) return luni.doispePaispe;
-//            else if (ora == 14) return luni.paispeSaispe;
-//            else if (ora == 16) return luni.saispeOptispe;
-//            else return luni.optispeDouazeci;
-//        }
-//        else if (zi.toLowerCase().equals("Marti")){
-//            if (ora == 8) return luni.optZece;
-//            else if (ora == 10) return luni.zeceDoispe;
-//            else if (ora == 12) return luni.doispePaispe;
-//            else if (ora == 14) return luni.paispeSaispe;
-//            else if (ora == 16) return luni.saispeOptispe;
-//            else return luni.optispeDouazeci;
-//        }
+    public String getDayOfWeek(LocalDate data){
+        return data.getDayOfWeek().toString();
     }
 
-    public void changeStatusOra(Zile zi, int ora){
-        Day day_curent = switch (zi) {
-            case Luni -> this.luni;
-            case Marti -> this.marti;
-            case Miercuri -> this.miercuri;
-            case Joi -> this.joi;
-            case Vineri -> this.vineri;
-            case Sambata -> this.sambata;
-            default -> this.duminica;
-        };
+    public Map<Integer, Boolean> getOreZi(LocalDate data){return orar.get(data);}
 
-        switch (ora) {
-            case 8 -> day_curent.optZece = !day_curent.optZece;
-            case 10 -> day_curent.zeceDoispe = !day_curent.zeceDoispe;
-            case 12 -> day_curent.doispePaispe = !day_curent.doispePaispe;
-            case 14 -> day_curent.paispeSaispe = !day_curent.paispeSaispe;
-            case 16 -> day_curent.saispeOptispe = !day_curent.saispeOptispe;
-            default -> day_curent.optispeDouazeci = !day_curent.optispeDouazeci;
-        };
-
+    ///setters
+    public void setStatus(LocalDate data, int ora, boolean status){
+        orar.get(data).put(ora, status);
     }
-
-
+    public void setStatusRecurent(int ora, boolean status, Zile zi){
+        DayOfWeek zi_dow = Zile.toDOW(zi);
+        LocalDate data = LocalDate.now();
+        data = data.with(zi_dow);
+        if (data.isBefore(LocalDate.now())){
+            data = data.plusWeeks(1);
+        }
+        for (int i = data.getDayOfYear(); i < 365; i=i+7){
+            orar.get(data).put(ora, status);
+            data = data.plusWeeks(1);
+        }
+    }
 }

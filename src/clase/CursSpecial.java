@@ -52,8 +52,10 @@ public class CursSpecial extends Curs{
     public int getNrStudenti() {
         return nrStudenti;
     }
-    //setters
 
+
+
+    //setters
     public void setNrMaximStudenti(int nrMaximStudenti) {
         this.nrMaximStudenti = nrMaximStudenti;
     }

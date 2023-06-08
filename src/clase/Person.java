@@ -1,11 +1,14 @@
 package clase;
 
+import java.time.LocalDate;
+
 public class Person {
     protected String firstName;
     protected String lastName;
     protected String phoneNumber;
     protected String email;
     protected int age;
+    protected Orar orar;
 
     //constructor
     public Person(String firstName, String lastName, String phoneNumber, String email, int age){
@@ -14,6 +17,7 @@ public class Person {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.age = age;
+        this.orar = new Orar();
     }
 
     //cc
@@ -42,6 +46,14 @@ public class Person {
         return age;
     }
 
+    public Orar getOrar(){
+        return orar;
+    }
+
+    public boolean getDisp(LocalDate data, int ora){
+        return orar.getStatusOra(data, ora);
+    }
+
     //setters
 
     public void setFirstName(String firstName) {
@@ -62,6 +74,10 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setDisp(LocalDate data, int ora, boolean status){
+        orar.setStatus(data, ora, status);
     }
 
 

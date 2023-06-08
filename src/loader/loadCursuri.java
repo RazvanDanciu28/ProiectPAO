@@ -30,7 +30,7 @@ public class loadCursuri {
                 15,
                 60
         ));
-        loadTeachers.teachers.get(3).changeDisp(Zile.Luni, 10);
+        loadTeachers.teachers.get(3).getOrar().setStatusRecurent(10, true, Zile.Luni);
 
 
         cursuriSpeciale.add(new CursSpecial(Materii.Informatica,
@@ -42,7 +42,7 @@ public class loadCursuri {
                 40,
                 100
         ));
-        loadTeachers.teachers.get(10).changeDisp(Zile.Marti, 10);
+        loadTeachers.teachers.get(10).getOrar().setStatusRecurent(10, true, Zile.Marti);
 
         cursuriSpeciale.add(new CursSpecial(Materii.Informatica,
                 120,
@@ -53,7 +53,7 @@ public class loadCursuri {
                 6,
                 30
         ));
-        loadTeachers.teachers.get(10).changeDisp(Zile.Miercuri, 10);
+        loadTeachers.teachers.get(10).getOrar().setStatusRecurent(10, true, Zile.Miercuri);
 
         //Matematica
         cursuriSpeciale.add(new CursSpecial(Materii.Matematica,
@@ -65,7 +65,7 @@ public class loadCursuri {
                 10,
                 40
         ));
-        loadTeachers.teachers.get(2).changeDisp(Zile.Luni, 8);
+        loadTeachers.teachers.get(2).getOrar().setStatusRecurent(8, true, Zile.Luni);
 
 
         cursuriSpeciale.add(new CursSpecial(Materii.Informatica,
@@ -77,7 +77,7 @@ public class loadCursuri {
                 40,
                 100
         ));
-        loadTeachers.teachers.get(4).changeDisp(Zile.Marti, 12);
+        loadTeachers.teachers.get(4).getOrar().setStatusRecurent(12, true, Zile.Marti);
 
         cursuriSpeciale.add(new CursSpecial(Materii.Informatica,
                 120,
@@ -88,7 +88,7 @@ public class loadCursuri {
                 6,
                 30
         ));
-        loadTeachers.teachers.get(4).changeDisp(Zile.Miercuri, 8);
+        loadTeachers.teachers.get(4).getOrar().setStatusRecurent(8, true, Zile.Miercuri);
 
 
         //de adaugat mai multe
